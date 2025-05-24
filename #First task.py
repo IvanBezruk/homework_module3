@@ -23,5 +23,3 @@ user_input = input("Enter a date in YYYY-MM-DD format: ")
 
 #Show results per user input
 print(get_days_from_today(user_input))
-
-#Second task
