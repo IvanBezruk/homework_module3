@@ -3,17 +3,25 @@ import datetime
 
 #We create a functin that calculates how many days are between today's date and specific date
 def get_days_from_today(date):
-    #Convert the input string to a datetime oject
-    written_date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
+    #Skip if user entered incorrect format of date
+    try:
 
-    #Determination of taday's date
-    current_date = datetime.date.today()
+        #Convert the input string to a datetime oject
+        written_date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
 
-    #Calculate the difference in days
-    difference = current_date - written_date
+        #Determination of taday's date
+        current_date = datetime.date.today()
 
-    #Return the difference in days
-    return difference.days
+        #Calculate the difference in days
+        difference = current_date - written_date
+
+        #Return the difference in days
+        return difference.days
+    
+    except ValueError:
+        #if format is wron the program shows message
+        print(f"Incorrect date format: '{date}'. Please use YYYY-MM-DD format.")
+        return None
 
 #Show results as stated in the task
 print(get_days_from_today('2020-10-09'))
