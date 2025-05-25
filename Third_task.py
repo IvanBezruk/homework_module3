@@ -12,7 +12,7 @@ def normalize_phone(phone_number):
     
     #If number starts with '0' it adds '+38'
     if digits_only.startswith('0'):
-        return '+38' + digits_only[1:]
+        return '+38' + digits_only
     
     #If number is already international number it adds '+'
     if len(digits_only) > 10:
